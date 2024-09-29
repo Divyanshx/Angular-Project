@@ -1,0 +1,17 @@
+
+<div class="container">
+  
+    <div class="input-group">
+      <input [(ngModel)]="newTask" placeholder="Add new task" class="form-control" />
+      <button (click)="addTask()" class="btn btn-primary">+</button>
+    </div>
+  
+    <ul class="list-group">
+      <li *ngFor="let task of tasks" class="list-group-item">
+        <a [routerLink]="['/task', task.id]">{{task.name}}</a>  
+        <button (click)="deleteTask(task)" class="btn btn-danger btn-sm float-right">-</button>
+      </li>
+    </ul>
+    
+  </div>
+  
